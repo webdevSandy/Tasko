@@ -15,7 +15,7 @@ const TaskManager = () => {
   useEffect(() => {
     // ✅ Fetch existing tasks
     axios
-      .get("http://localhost:5000/api/tasks", {
+      .get("https://tasko-io75.onrender.com/api/tasks", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setTasks(res.data))
@@ -53,7 +53,7 @@ const TaskManager = () => {
   const addTask = async () => {
     if (title.trim() === "") return;
     await axios.post(
-      "http://localhost:5000/api/tasks",
+      "https://tasko-io75.onrender.com/api/tasks",
       { title, completed: false },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -63,14 +63,14 @@ const TaskManager = () => {
 
   const toggleComplete = async (task) => {
     await axios.put(
-      `http://localhost:5000/api/tasks/${task._id}`,
+      `https://tasko-io75.onrender.com/api/tasks/${task._id}`,
       { ...task, completed: !task.completed },
       { headers: { Authorization: `Bearer ${token}` } }
     );
   };
 
   const deleteTask = async (id) => {
-    await axios.delete(`http://localhost:5000/api/tasks/${id}`, {
+    await axios.delete(`https://tasko-io75.onrender.com/api/tasks/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
   };
