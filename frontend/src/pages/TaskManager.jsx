@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
-const socket = io("http://localhost:5000");
+const socket = io("https://tasko-io75.onrender.com");
 import axios from "axios";
 import { io } from "socket.io-client";
 import { AuthContext } from "../context/AuthContext";
@@ -80,7 +80,7 @@ const TaskManager = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         {/* ➕ Task Adder */}
         <div className="bg-white p-6 rounded-xl shadow-md">
-          <h2 className="text-2xl font-bold text-blue-600 mb-4">➕ Add Task</h2>  
+          <h2 className="text-2xl font-bold text-blue-600 mb-4">➕ Add Task</h2>
           <input
             ref={inputRef}
             className="w-full p-3 border rounded-md mb-3"
