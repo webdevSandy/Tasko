@@ -4,7 +4,7 @@ import Register from "./pages/Register";
 import TaskManager from "./pages/TaskManager";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import Navbar from "./components/Navbar";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
