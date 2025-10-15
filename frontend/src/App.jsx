@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import TaskManager from "./pages/TaskManager";
-import ProtectedRoute from "./pages/ProtectedRoute";
+import ProtectedRoute from "./pages/ProtectedRoute";  
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -17,9 +17,9 @@ const App = () => {
         <Route
           path="/tasks"
           element={
-            <ProtectedRoute>
-              <TaskManager />
-            </ProtectedRoute>
+            // <ProtectedRoute>
+            <TaskManager />
+            // </ProtectedRoute>
           }
         />
       </Routes>
