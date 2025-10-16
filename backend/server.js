@@ -14,7 +14,7 @@ connectDB();
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
-  cors: { origin: "http://localhost:5173", methods: ["GET", "POST"] },
+  cors: { origin: process.env.FRONTEND_URL, methods: ["GET", "POST"] },
 });
 
 app.use(cors());
@@ -30,8 +30,8 @@ io.on("connection", (socket) => {
   console.log("🔌 Client connected:", socket.id);
 });
 
-server.listen(5000, () => {
-  console.log("🚀 Server running on http://localhost:5000");
+server.listen(process.env.PORT, () => {
+  console.log(`🚀 Server running on ${process.env.BACKEND_URL}`);
 });
 
 
